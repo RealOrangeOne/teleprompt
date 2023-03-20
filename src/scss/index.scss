@@ -1,5 +1,6 @@
 @import "../../node_modules/purecss/build/base.css";
 @import "../../node_modules/purecss/build/buttons.css";
+@import "../../node_modules/@fontsource/atkinson-hyperlegible/400.css";
 
 
 body {
@@ -16,6 +17,7 @@ body {
 }
 
 #teleprompter {
+    font-family: "Atkinson Hyperlegible";
     padding: 1em;
     line-height: 1.5;
     padding-bottom: 50vh;
