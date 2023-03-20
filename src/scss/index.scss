@@ -1,0 +1,27 @@
+@import "../../node_modules/purecss/build/base.css";
+@import "../../node_modules/purecss/build/buttons.css";
+
+
+body {
+    background-color: black;
+    color: white;
+}
+
+#open-button {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+#teleprompter {
+    padding: 1em;
+    line-height: 1.5;
+    padding-bottom: 50vh;
+
+    // Nest bullets further than usual
+    ul ul {
+        padding-left: 2em;
+    }
+}

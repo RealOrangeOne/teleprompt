@@ -1,0 +1,29 @@
+{
+  "name": "teleprompt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealOrangeOne/teleprompt.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RealOrangeOne/teleprompt/issues"
+  },
+  "homepage": "https://github.com/RealOrangeOne/teleprompt#readme",
+  "dependencies": {
+    "browser-fs-access": "^0.33.0",
+    "fitty": "^2.3.6",
+    "marked": "^4.2.12",
+    "purecss": "^3.0.0",
+    "sass": "^1.59.3",
+    "vite": "^4.2.1"
+  }
+}
