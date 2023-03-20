@@ -2,7 +2,6 @@
 @import "../../node_modules/purecss/build/buttons.css";
 @import "../../node_modules/@fontsource/atkinson-hyperlegible/400.css";
 
-
 body {
     background-color: black;
     color: white;
@@ -21,6 +20,9 @@ body {
     padding: 1em;
     line-height: 1.5;
     padding-bottom: 50vh;
+
+    // Override fitty's white-space ignoring
+    white-space: normal !important;
 
     // Nest bullets further than usual
     ul ul {
