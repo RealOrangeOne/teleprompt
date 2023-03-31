@@ -43,7 +43,7 @@ openButton.addEventListener("click", async function () {
 });
 
 addEventListener("keydown", event => {
-    const scrollInterval = window.innerHeight * 0.15;
+    const scrollInterval = window.innerHeight * 0.20;
     const fontSize = parseFloat(teleprompter.style.fontSize);
 
     switch (event.key) {
