@@ -5,13 +5,27 @@ import fitty from 'fitty';
 const openButton = document.getElementById("open-button");
 const teleprompter = document.getElementById("teleprompter");
 
-if (!openButton || !teleprompter) {
-    throw "Something wrong";
+const RESIZE_INTERVAL = 0.1;
+const INITIAL_TITLE = document.title;
+
+function handleText(text: string, filename: string) {
+    // If it's markdown, render it
+    // NOTE: No sanitization of content is done.
+    if (filename.endsWith(".md")) {
+        text = marked.parse(text);
+    }
+
+    teleprompter!.innerHTML = text;
+
+    // Automatically adjust the size
+    fitty('#' + teleprompter!.id, {minSize: 35});
+
+    // Update page title
+    document.title = `${INITIAL_TITLE} - ${filename}`;
 }
 
-const RESIZE_INTERVAL = 0.1;
 
-openButton.addEventListener("click", async function () {
+openButton!.addEventListener("click", async function () {
     const blob = await fileOpen([
         {
             description: "Text files",
@@ -26,25 +40,16 @@ openButton.addEventListener("click", async function () {
     ]);
 
     let text = await blob.text();
-    openButton.style.display = "none";
 
-    // If it's markdown, render it
-    // NOTE: No sanitization of content is done.
-    if (blob.name.endsWith(".md")) {
-        text = marked.parse(text);
-    }
+    // Hide open button
+    openButton!.style.display = "none";
 
-    teleprompter.innerHTML = text;
-
-    // Automatically adjust the size
-    fitty('#' + teleprompter.id, {minSize: 35});
-
-    document.title += ` - ${blob.name}`;
+    handleText(text, blob.name);
 });
 
 addEventListener("keydown", event => {
     const scrollInterval = window.innerHeight * 0.20;
-    const fontSize = parseFloat(teleprompter.style.fontSize);
+    const fontSize = parseFloat(teleprompter!.style.fontSize);
 
     switch (event.key) {
         case "ArrowUp":
@@ -58,12 +63,12 @@ addEventListener("keydown", event => {
         case "+":
         case "=":
             event.preventDefault();
-            teleprompter.style.fontSize = `${fontSize * (1 + RESIZE_INTERVAL)}px`;
+            teleprompter!.style.fontSize = `${fontSize * (1 + RESIZE_INTERVAL)}px`;
             break;
         case "-":
         case "_":
             event.preventDefault();
-            teleprompter.style.fontSize = `${fontSize * (1 - RESIZE_INTERVAL)}px`;
+            teleprompter!.style.fontSize = `${fontSize * (1 - RESIZE_INTERVAL)}px`;
             break;
     }
 });
