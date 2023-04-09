@@ -20,10 +20,11 @@
   "homepage": "https://github.com/RealOrangeOne/teleprompt#readme",
   "dependencies": {
     "@fontsource/atkinson-hyperlegible": "^4.5.11",
+    "@openfonts/roboto-condensed_all": "^1.44.2",
     "browser-fs-access": "^0.33.0",
     "fitty": "^2.3.6",
     "marked": "^4.2.12",
-    "purecss": "^3.0.0",
+    "normalize.css": "^8.0.1",
     "sass": "^1.59.3",
     "vite": "^4.2.1"
   }

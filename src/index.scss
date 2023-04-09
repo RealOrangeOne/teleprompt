@@ -1,20 +1,62 @@
-@import "../node_modules/purecss/build/base.css";
-@import "../node_modules/purecss/build/buttons.css";
+@import "../node_modules/normalize.css/normalize.css";
 
+// Load fonts here, as loading fonts doesn't play nice with Vite's dev server
 @import "../node_modules/@fontsource/atkinson-hyperlegible/400.css";
 @import "../node_modules/@fontsource/atkinson-hyperlegible/700.css";
+@import "../node_modules/@openfonts/roboto-condensed_all/index.css";
 
 body {
     background-color: black;
     color: white;
+    height: 100vh;
+
+    &.with-splash {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-#open-button {
-    font-size: 2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
+#splash-screen {
+    font-family: "Roboto Condensed", sans-serif;
+    background: #333;
+    padding: 20px;
+    min-width: 33vw;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    footer {
+        text-align: center;
+
+        p {
+            margin-bottom: 0;
+            margin-top: 0.4rem;
+        }
+    }
+
+    #open-button {
+        font-size: 2rem;
+    }
+
+    .open-button-wrapper {
+        text-align: center;
+        margin: 2rem;
+    }
+
+    .keyboard-shortcuts {
+        li {
+            margin-bottom: 7px;
+        }
+    }
+
+    kbd {
+        background-color: black;
+        padding: 2.5px 5px;
+        border-radius: 7px;
+    }
 }
 
 #teleprompter {
@@ -29,5 +71,9 @@ body {
     // Nest bullets further than usual
     ul ul {
         padding-left: 2em;
+    }
+
+    &.hidden {
+        display: none;
     }
 }

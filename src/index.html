@@ -10,9 +10,35 @@
     <title>Teleprompt</title>
     <link rel="stylesheet" href="index.scss"/>
   </head>
-  <body>
-    <div id="teleprompter"></div>
-    <button id="open-button" class="pure-button">Open File</button>
+  <body class="with-splash">
+    <div id="teleprompter" class="hidden"></div>
+    <div id="splash-screen">
+      <div>
+        <h1>Teleprompt</h1>
+
+        <ol>
+          <li>Click "Open file" below</li>
+          <li>Select your file. Markdown files will be automatically rendered.</li>
+          <li>Present</li>
+        </ol>
+
+        <h2>Instructions</h2>
+        <p>Use the keyboard to navigate:</p>
+        <ul class="keyboard-shortcuts">
+          <li><kbd title="Arrow down">&darr;</kbd>: Scroll down</li>
+          <li><kbd title="Arrow up">&uarr;</kbd>: Scroll up</li>
+          <li><kbd>PgDn</kbd>: Scroll down, quickly</li>
+          <li><kbd>PgUp</kbd>: Scroll up, quickly</li>
+          <li><kbd>+</kbd> / <kbd>=</kbd>: Zoom in</li>
+          <li><kbd>-</kbd> / <kbd>_</kbd>: Zoom out</li>
+        </ul>
+      </div>
+      <p class="open-button-wrapper"><a id="open-button" href="#">📁 Open file</a></p>
+      <footer>
+        <p><a href="https://theorangeone.net" style="color: #FF7F00">Jake Howard</a> 2023</p>
+        <p><a class="view-source" href="https://github.com/RealOrangeOne/teleprompt">View source</a></p>
+      </footer>
+    </div>
     <script type="module" src="index.ts"></script>
   </body>
 </html>

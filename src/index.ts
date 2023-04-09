@@ -2,6 +2,7 @@ import { fileOpen } from 'browser-fs-access';
 import * as marked from 'marked';
 import fitty from 'fitty';
 
+const splashScreen = document.getElementById("splash-screen");
 const openButton = document.getElementById("open-button");
 const teleprompter = document.getElementById("teleprompter");
 
@@ -14,6 +15,8 @@ function handleText(text: string, filename: string) {
     if (filename.endsWith(".md")) {
         text = marked.parse(text);
     }
+
+    teleprompter!.classList.remove("hidden");
 
     teleprompter!.innerHTML = text;
 
@@ -41,8 +44,9 @@ openButton!.addEventListener("click", async function () {
 
     let text = await blob.text();
 
-    // Hide open button
-    openButton!.style.display = "none";
+    // Hide splash screen
+    splashScreen!.style.display = "none";
+    document.body.classList.remove("with-splash");
 
     handleText(text, blob.name);
 });
