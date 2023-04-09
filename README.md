@@ -4,16 +4,12 @@ A basic teleprompter
 
 ## Usage
 
-1. Click "Open file" and select a plain text / HTML file
-2. Present
+[View teleprompt](https://realorangeone.github.io/teleprompt/)
 
-Markdown files will be automatically rendered.
+## Features
 
-## Shortcuts
-
-- `+` / `=`: Increase font size
-- `-` / `_`: Decrease font size
-- Up arrow: Scroll up
-- Down arrow: Scroll down
-
-Font sizes are automatically calculated using [`fitty`](https://github.com/rikschennink/fitty).
+- Easy scrolling with arrow keys, or a presentation remote
+- Font sizes are automatically calculated using [`fitty`](https://github.com/rikschennink/fitty).
+- Lightweight, runs entirely client-side
+- [Hyperlegible font](https://brailleinstitute.org/freefont)
+- White text on black background, for easier reading
