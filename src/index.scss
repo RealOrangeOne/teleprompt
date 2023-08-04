@@ -9,12 +9,14 @@ body {
     background-color: black;
     color: white;
     height: 100vh;
+    text-rendering: optimizeLegibility;
 
     &.with-splash {
         display: flex;
         align-items: center;
         justify-content: center;
     }
+
 }
 
 #splash-screen {
@@ -62,7 +64,7 @@ body {
 #teleprompter {
     font-family: "Atkinson Hyperlegible";
     padding: 1em;
-    line-height: 1.5;
+    line-height: calc(1ex / 0.32);
     padding-bottom: 50vh;
 
     // Override fitty's white-space ignoring
